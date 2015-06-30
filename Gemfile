@@ -6,6 +6,7 @@ gem 'dm-postgres-adapter'
 gem 'sinatra'
 
 group :development, :test do
+  gem 'byebug'
   gem 'database_cleaner'
   gem 'rspec'
   gem 'capybara'

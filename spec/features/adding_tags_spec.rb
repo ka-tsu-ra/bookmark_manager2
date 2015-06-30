@@ -7,6 +7,7 @@ feature 'Adding tags' do
 
     click_button 'Create link'
     link = Link.first
+
     expect(link.tags.map(&:name)).to include('education')
     # HAVE TO SPECITY MAP WITH NAME OR IT WILL LOOK FOR TAG OBJECTS TO INCLUDE
     # 'EDUCATION', NOT THE NAMES OF THE TAG OBJECTS.
