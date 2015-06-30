@@ -22,12 +22,21 @@ class BookmarkManager < Sinatra::Base
     tag = Tag.create(name: params[:tag])
     link.tags << tag
     link.save
-    #Link.create(url: params[:url], title: params[:title])
+    #THIS MAKES NEW ENTRIES VIA THE MODEL. LINK.SAVE MAKES THE ENTRY GO IN.
+    #LINKS.TAGS << TAG DESCRIBES THE RELATIONSHIP BETWEEN THE TABLES.
     redirect to ('/links')
   end
 
   get '/links/new' do
     erb :'links/new'
+  end
+
+  get '/tags/:name' do #:NAME MAKES IT CONNECT TO WHAT USER ENTERS IN NAME FIELD. USE OF PARAMETER IN THE ROUTE.
+    tag = Tag.first(name: params[:name])
+    @links = tag ? tag.links : []
+    #  ^^If the tag exists, we get associated links. Otherwise, we just return an empty array.
+    # NB TAG.LINKS HERE, NOT LINK.TAGS.
+    erb :'links/index'
   end
 
 
