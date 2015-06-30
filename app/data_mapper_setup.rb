@@ -8,6 +8,7 @@ DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 #DataMapper knows how to do this under the hood.
 
 require './app/models/link'
+require './app/models/tag'
 #Make the code for all the models available
 #NB that files requires the DataMapper::Resourcetouch
 
@@ -15,11 +16,11 @@ DataMapper.finalize
 # Checks the models are in sync in terms of associations/relationships.
 
 DataMapper.auto_upgrade!
-#instruction to datamapper to take all of the info given to it 
+#instruction to datamapper to take all of the info given to it
 #through the models and go and create all the database resources
 #needed to support those models. e.g. greate a links table if it
 #doesnt exist, create new columns if they don't exist etc.
 
 
-#THIS SETUP FILE CREATES THE TABLES - 
+#THIS SETUP FILE CREATES THE TABLES -
 #WITH HELP FROM THE files#IT LINKS TO!
