@@ -9,7 +9,7 @@ DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 
 require './app/models/link'
 #Make the code for all the models available
-#NB that files requires the DataMapper::Resource
+#NB that files requires the DataMapper::Resourcetouch
 
 DataMapper.finalize
 # Checks the models are in sync in terms of associations/relationships.
