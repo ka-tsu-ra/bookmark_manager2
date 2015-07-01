@@ -1,5 +1,7 @@
 require 'data_mapper' #= the gem
 env = ENV['RACK_ENV'] || 'development'
+# WHEN YOU RUN A RACK PROGRAM THE RACK ADDS A BUNCH OF ENV VARIABLES.
+# RACK_ENV MEANS IN THE LOCAL HOST SERVER AREA
 # checks for current environment from operating system.
 # if RSPEC is running it will set the env to test.
 

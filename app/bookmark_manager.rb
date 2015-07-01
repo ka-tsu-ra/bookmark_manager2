@@ -32,7 +32,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/tags/:name' do #:NAME MAKES IT CONNECT TO WHAT USER ENTERS IN NAME FIELD. USE OF PARAMETER IN THE ROUTE.
-    tag = Tag.first(name: params[:name])
+    tag = Tag.first(name: params[:name]) #WHAT IS .FIRST REFERRING TO? WHY IS IT THE FIRST ONE?
     @links = tag ? tag.links : []
     #  ^^If the tag exists, we get associated links. Otherwise, we just return an empty array.
     # NB TAG.LINKS HERE, NOT LINK.TAGS.
